@@ -1,5 +1,7 @@
 import { GNodeStr } from "../graph/graph";
 import { Stack } from "../common/stack";
+import { Queue } from "../common/queue";
+
 /** Return array of nodes, in DFS order (recursive version)  */
 
 function rDfs(
@@ -44,7 +46,22 @@ function iDfs(start: GNodeStr): string[] {
 /** Return array of nodes, in BFS order (iterative version)  */
 
 function bfs(start: GNodeStr): string[] {
-  return ["todo"];
+  const toVisit = new Queue<GNodeStr>([start]);
+  const seen = new Set<GNodeStr>([start]);
+  const result: string[] = [];
+
+  while (!toVisit.isEmpty()) {
+    let currNode = toVisit.dequeue();
+    result.push(currNode.value);
+    for (let neighbor of currNode.adjacent) {
+      if (!seen.has(neighbor)) {
+        seen.add(neighbor);
+        toVisit.enqueue(neighbor);
+      }
+    }
+  }
+
+  return result;
 }
 
 
