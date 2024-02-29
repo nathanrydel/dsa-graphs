@@ -26,6 +26,9 @@ class GraphStr {
 
   /** Add array of nodes to graph. */
   addNodes(nodeArray: GNodeStr[]): void {
+    for (const node of nodeArray) {
+      this.nodes.add(node);
+    }
   }
 
   /** Add edge between v1 and v2. */
