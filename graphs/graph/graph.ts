@@ -27,7 +27,7 @@ class GraphStr {
   /** Add array of nodes to graph. */
   addNodes(nodeArray: GNodeStr[]): void {
     for (const node of nodeArray) {
-      this.nodes.add(node);
+      this.addNode(node);
     }
   }
 
