@@ -27,11 +27,11 @@ function iDfs(start: GNodeStr): string[] {
   const visited = new Set<GNodeStr>([start]);
   const dfsStrs: string[] = [];
 
-  while(!stack.isEmpty()){
+  while (!stack.isEmpty()) {
     const currNode = stack.pop();
     dfsStrs.push(currNode.value);
-    for(const adj of currNode.adjacent){
-      if(!visited.has(adj)){
+    for (const adj of currNode.adjacent) {
+      if (!visited.has(adj)) {
         visited.add(adj);
         stack.push(adj);
       }
