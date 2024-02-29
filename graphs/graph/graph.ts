@@ -44,6 +44,8 @@ class GraphStr {
 
   /** Remove edge between v1 and v2. */
   removeEdge(v1: GNodeStr, v2: GNodeStr): void {
+    v1.adjacent.delete(v2);
+    v2.adjacent.delete(v1);
   }
 
   /** Remove node from graph. */
