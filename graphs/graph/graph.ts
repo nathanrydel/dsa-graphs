@@ -33,6 +33,13 @@ class GraphStr {
 
   /** Add edge between v1 and v2. */
   addEdge(v1: GNodeStr, v2: GNodeStr): void {
+    v1.adjacent.add(v2);
+    v2.adjacent.add(v1);
+  }
+
+  /** Add edges. */
+  addEdges(edges: [GNodeStr, GNodeStr][]): void {
+    for (const [v1, v2] of edges) this.addEdge(v1, v2);
   }
 
   /** Remove edge between v1 and v2. */
