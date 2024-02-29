@@ -3,9 +3,9 @@ import { GNodeStr } from "../graph/graph";
 /** Return array of nodes, in DFS order (recursive version)  */
 
 function rDfs(
-    start: GNodeStr,
-    result: string[] = [],
-    visited = new Set([start])): string[] {
+  start: GNodeStr,
+  result: string[] = [],
+  visited = new Set([start])): string[] {
   return ["todo"];
 }
 
@@ -15,7 +15,7 @@ function iDfs(start: GNodeStr): string[] {
   return ["todo"];
 }
 
-/** Return array of nodes, in BFS order (recursive version)  */
+/** Return array of nodes, in BFS order (iterative version)  */
 
 function bfs(start: GNodeStr): string[] {
   return ["todo"];
