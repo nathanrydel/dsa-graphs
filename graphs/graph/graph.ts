@@ -50,6 +50,11 @@ class GraphStr {
 
   /** Remove node from graph. */
   removeNode(node: GNodeStr): void {
+    for (let adj of this.nodes) {
+      if (adj.adjacent.has(node)) adj.adjacent.delete(node);
+    }
+    node.adjacent.clear();
+    this.nodes.delete(node);
   }
 }
 
